@@ -34,10 +34,6 @@ class DuneCommon(CMakePackage):
     list_url = "https://www.dune-project.org/download/"
     list_depth = 1
 
-    # FIXME: Add a list of GitHub accounts to
-    # notify when the package is updated.
-    # maintainers = ['github_user1', 'github_user2']
-
     version('2.7.0', sha256='3c83c583a45325513113148cb94bd978e601907a6591c765f6253342e00f1890')
     version('2.6.0', sha256='1c566abb509ffd29690055acb5a7a69e3eda3848c2171f7af75c1e8743663c05')
     version('2.5.2', sha256='042fc7b9ae4b781e027a48048ea4067deb924ae172e56821f679bc8afe312159')
@@ -70,7 +66,7 @@ class DuneCommon(CMakePackage):
     depends_on('mpi')
     depends_on('blas',   when='+blas')
     depends_on('lapack', when='+lapack')
-    depends_on('doxygen', type='build', when='+doxygen')
+    depends_on('doxygen', when='+doxygen')
     depends_on('gmp', when='+gmp')
     depends_on('intel-tbb', when='+tbb')
     depends_on('intel-mkl', when='+mkl')

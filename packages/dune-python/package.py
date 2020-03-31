@@ -39,10 +39,6 @@ class DunePython(CMakePackage):
 
     python_components = [ 'dune' ]
 
-    # FIXME: Add a list of GitHub accounts to
-    # notify when the package is updated.
-    # maintainers = ['github_user1', 'github_user2']
-
     version('2.7', sha256='432564c8577f5d3c9e9d6b2b3710189fd3ac9551eac61986f5966d2fa2534c46')
     version('2.6', sha256='cc9e9222de850eea659680e41a824bb5d7b300d0e89a8c0855f8d0a31f01ff2d')
 

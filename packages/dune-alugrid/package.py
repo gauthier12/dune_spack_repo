@@ -29,10 +29,6 @@ class DuneAlugrid(CMakePackage):
     homepage = "https://www.dune-project.org"
     url      = "https://github.com/dune-mirrors/dune-alugrid/archive/v2.6.0.tar.gz"
 
-    # FIXME: Add a list of GitHub accounts to
-    # notify when the package is updated.
-    # maintainers = ['github_user1', 'github_user2']
-
     version('2.6.0',    sha256='25fa4a5127837a0def2f93ae7fda38c5098dd066536236533015755ad264a870')
     version('2.4.0',    sha256='fd0fab5b2c6e1e0c9f792947dad1f9c2e2d6b65242935474017e0c278bab3ae1')
 

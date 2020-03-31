@@ -35,10 +35,6 @@ class DuneUggrid(CMakePackage):
     homepage = "https://www.dune-project.org"
     url      = "https://github.com/dune-mirrors/dune-uggrid/archive/v2.6.0.tar.gz"
 
-    # FIXME: Add a list of GitHub accounts to
-    # notify when the package is updated.
-    # maintainers = ['github_user1', 'github_user2']
-
     version('2.7.0',    sha256='bcf4afd386f23cdb7f7ba16cc2fec4918c4afb516761ef7905af8378ea86eb4c')
     version('2.6.0',    sha256='3da75c672c151ca711526f2c0619d6f1ebf8f489c972066ee3b43252ea8daed4')
     version('2.5.2',    sha256='3a484376e625fff880ff9db6be53ccca0080c5ce7229ed31c09e09fa4a4a4afa')

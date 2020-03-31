@@ -33,10 +33,6 @@ class DuneGrid(CMakePackage):
     list_url = "https://www.dune-project.org/download/"
     list_depth = 1
 
-    # FIXME: Add a list of GitHub accounts to
-    # notify when the package is updated.
-    # maintainers = ['github_user1', 'github_user2']
-
     version('2.7.0', sha256='fa88dd60619df51100327a9128c3f7242a3a13b7ddfbac43a04f7e85c1f8d29d')
     version('2.6.0', sha256='a03145e8fd9b0d585f84ca8b62a65d6fc3e918fb571d48c1eb69f95499dee4ca')
     version('2.5.2', sha256='5763e36a0623f37a2cec14d62631e56468e10c3b4ed68f7a36b9479b13fd87d5')

@@ -38,10 +38,6 @@ class DuneIstl(CMakePackage):
     list_url = "https://www.dune-project.org/download/"
     list_depth = 1
 
-    # FIXME: Add a list of GitHub accounts to
-    # notify when the package is updated.
-    # maintainers = ['github_user1', 'github_user2']
-
     version('2.7.0', sha256='c98d218bdf79549bb2e96fc465e9f9a72f5d88b78090812a59dae85cfee3833e')
     version('2.6.0', sha256='5ce06fc396624f654c3f34e333fd5900e992c4596b3230abe68617ed77f64f50')
     version('2.5.2', sha256='9fe33fb60b9c9f98100bfc909eb4d56598bae4f036f01f00b4a9fd2498387178')

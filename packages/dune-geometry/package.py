@@ -35,10 +35,6 @@ class DuneGeometry(CMakePackage):
     list_url = "https://www.dune-project.org/download/"
     list_depth = 1
 
-    # FIXME: Add a list of GitHub accounts to
-    # notify when the package is updated.
-    # maintainers = ['github_user1', 'github_user2']
-
     version('2.7.0', sha256='d996c73efa345338766c5e4774e3b06ec1ed27eb745916af35877bbf38dd2cb2')
     version('2.6.0', sha256='7661155a0be3d001db43c6d99f1ee1a04101bc3e666dade82a40a6ed65578a42')
     version('2.5.2', sha256='30e9e6c22206034e3e490d3b0bf841cd49e8ece0d3a2f6df453e8594f546ec0d')
