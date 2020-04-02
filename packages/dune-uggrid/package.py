@@ -54,7 +54,7 @@ class DuneUggrid(CMakePackage):
     variant('2d', default=True, description='Build library for 2d')
     variant('3d', default=True, description='Build library for 3d')
     variant('threads', default=True, description='Activate pThread support')
-    variant('shared', default=False, description='Enables the build of shared libraries.')
+    variant('shared', default=True, description='Enables the build of shared libraries.')
     variant('python', default=True, description='Build with Python')
     variant('extrautils', default=True, description='Enable compilation and installation of extra utilities from the src subdirectory')
     variant('selector', default=True, description='Grid selector definition added to config.h')

@@ -62,7 +62,7 @@ class DuneGrid(CMakePackage):
     variant('extrautils', default=True, description='Enable compilation and installation of extra utilities from the src subdirectory')
     variant('selector', default=True, description='Grid selector definition added to config.h')
     variant('threads', default=True, description='Activate pThread support')
-    variant('shared', default=False, description='Enables the build of shared libraries.')
+    variant('shared', default=True, description='Enables the build of shared libraries.')
 
     #dependencies 
     depends_on('dune-common')

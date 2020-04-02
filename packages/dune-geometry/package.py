@@ -56,7 +56,7 @@ class DuneGeometry(CMakePackage):
     variant('vc', default=True, description='Build C++ Vectorization library support')
     variant('imagemagick', default=False, description='Imagemagick support')
     variant('threads', default=True, description='Activate pThread support')
-    variant('shared', default=False, description='Enables the build of shared libraries.')
+    variant('shared', default=True, description='Enables the build of shared libraries.')
     variant('extrautils', default=True, description='Enable compilation and installation of extra utilities from the src subdirectory')
     variant('selector', default=True, description='Grid selector definition added to config.h')
 
