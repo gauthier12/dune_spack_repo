@@ -11,11 +11,11 @@
 # next to all the things you'll want to change. Once you've handled
 # them, you can save this file and test your package like this:
 #
-#     spack install dune-istl
+#     spack install dune-typetree
 #
 # You can edit this file again by typing:
 #
-#     spack edit dune-istl
+#     spack edit dune-typetree
 #
 # See the Spack documentation for more information on packaging.
 # ----------------------------------------------------------------------------
@@ -24,47 +24,35 @@ from spack import *
 
 
 class DuneTypetree(CMakePackage):
-    """
-    @description@
-    """
+    """TypeTree is a template library for constructing and operating on statically typed trees of objects."""
 
     homepage = "https://www.dune-project.org"
-    url      = "https://gitlab.dune-project.org/staging/dune-typetree/-/archive/v2.6.0/dune-typetree-v2.6.0.tar.gz"
-    list_url = "https://www.dune-project.org/download/"
+    url      = "https://gitlab.dune-project.org/staging/dune-typetree/-/archive/releases/2.7/dune-typetree-releases-2.7.tar.gz"
+    list_url = 'https://gitlab.dune-project.org/staging/dune-typetree/-/archive/releases/'
     list_depth = 1
 
-    version('2.7.0', sha256='c98d218bdf79549bb2e96fc465e9f9a72f5d88b78090812a59dae85cfee3833e')
-    version('2.6.0', sha256='5ce06fc396624f654c3f34e333fd5900e992c4596b3230abe68617ed77f64f50')
-    version('2.5.2', sha256='9fe33fb60b9c9f98100bfc909eb4d56598bae4f036f01f00b4a9fd2498387178')
-    version('2.5.1', sha256='7e183b1361419620e3df7287d962bcbc1860fa8233588f5b25507ef7a20649dc')
-    version('2.5.0', sha256='f9af37af1e8186443df384f155d66d2f16e95a909f9574d2bcae85d6d14b95ab')
-    version('2.4.2', sha256='7e02eaa3d2d054f056709d1c9a91235b73bc0f96b47630f91c914d349093f572')
-    version('2.4.1', sha256='0ea512e538935812cd6f3a9504f3b06fadff5c15d9d1b0dc499a5a913ea02a4d')
-    version('2.4.0', sha256='205686b77f7e36d6bc0d2771b1514d98d221b608e5f4efdeeafb1a750e3ca2ba')
+    version('2.7', sha256='b546c2588576d4e8b22e675865628734f2f3d9a8688255742d099f41e5db574e')
+    version('2.6', sha256='a5d78b00ff45a30163062812c8c85f18091b6874df72ceadb9c5c718e0db07de')
+    version('2.5', sha256='7596858584e6805db9db701baa6362bbda0607fe19163c99a69ffa3335eee7a2')
+
 
     #option
     variant('blas',   default=True, description='Build with BLAS support')
     variant('lapack', default=True, description='Build with LAPACK support')
     variant('gmp', default=True, description='Build with GNU multi-precision library support')
     variant('tbb', default=True, description='Build with Threading Building Blocks library support')
-    variant('mkl', default=True, description='Build with Threading Building Blocks library support')
+    variant('mkl', default=True, description='Build with Math Kernel library support')
     variant('doxygen', default=True, description='Create Doxygen documentation')
     variant('sphinx', default=True, description='Create Sphinx documentation')
-    variant('python', default=True, description='Build with Python')
     variant('vc', default=True, description='Build C++ Vectorization library support')
     variant('imagemagick', default=False, description='Imagemagick support')
-    variant('metis', default=True, description='Build METIS library support')
-    variant('parmetis', default=True, description='Build ParMETIS library support')
-    variant('suitesparse', default=True, description='Build SuiteSparse library support')
-    variant('superlu', default=True, description='Build Supernodal LU library support')
-    variant('arpack', default=True, description='Build ARnoldi PACKage library support')
+    variant('oldcategory', default=True, description='Enable/Disable the backwards compatibility of the category enum/method in dune-istl solvers, preconditioner, etc.')
     variant('threads', default=True, description='Activate pThread support')
-    variant('shared', default=False, description='Enables the build of shared libraries.')
-    variant('extrautils', default=True, description='Enable compilation and installation of extra utilities from the src subdirectory')
-    variant('selector', default=True, description='Grid selector definition added to config.h')
+    variant('shared', default=True, description='Enables the build of shared libraries.')
+
 
     #dependencies 
-    depends_on('dune-common')
+    depends_on('dune-common+shared')
     depends_on('cmake@3.1:', type='build')
     depends_on('mpi')
     depends_on('blas',   when='+blas')
@@ -73,23 +61,18 @@ class DuneTypetree(CMakePackage):
     depends_on('gmp', when='+gmp')
     depends_on('intel-tbb', when='+tbb')
     depends_on('intel-mkl', when='+mkl')
-    depends_on('python@3.0:')
+    depends_on('python@3.8.2:')
     depends_on('py-sphinx', type='build', when='+sphinx')
     depends_on('vc', when='+vc')
     depends_on('pkg-config', type='build')
     depends_on('imagemagick', type='build', when='+imagemagick')
-    depends_on('metis', when='+metis')
-    depends_on('parmetis', when='+parmetis')
-    depends_on('suite-sparse', when='+suitesparse')
-    depends_on('superlu', when='+superlu')
-    depends_on('arpack-ng', when='+arpack')
-
-    patch('AddQuadMathFlags.cmake.patch', when='@2.6')
-    patch('FindQuadMath.cmake.patch', when='@2.6')
 
     def url_for_version(self, version):
-        url = "https://gitlab.dune-project.org/staging/dune-typetree/-/archive/{1}/dune-typetree-{1}.tar.gz"
+        url = 'https://gitlab.dune-project.org/staging/dune-typetree/-/archive/releases/{1}/dune-typetree-releases-{1}.tar.gz'
         return url.format(version.up_to(2), version)
+
+    patch('AddQuadMathFlags.cmake.patch')
+    patch('FindQuadMath.cmake.patch')
 
     def cmake_args(self):
         """Populate cmake arguments."""
