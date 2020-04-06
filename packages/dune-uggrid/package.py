@@ -46,7 +46,7 @@ class DuneUggrid(CMakePackage):
     variant('lapack', default=True, description='Build with LAPACK support')
     variant('gmp', default=True, description='Build with GNU multi-precision library support')
     variant('tbb', default=True, description='Build with Threading Building Blocks library support')
-    variant('mkl', default=True, description='Build with Threading Building Blocks library support')
+    variant('mkl', default=True, description='Build with Math Kernel library support')
     variant('doxygen', default=True, description='Create Doxygen documentation')
     variant('sphinx', default=True, description='Create Sphinx documentation')
     variant('vc', default=True, description='Build C++ Vectorization library support')

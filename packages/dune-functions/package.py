@@ -58,6 +58,8 @@ class DuneFunctions(CMakePackage):
     variant('amiramesh', default=False, description='Build with AmiraMesh support')
     variant('selector', default=True, description='Grid selector definition added to config.h')
     variant('oldcategory', default=True, description='Enable/Disable the backwards compatibility of the category enum/method in dune-istl solvers, preconditioner, etc.')
+    variant('extrautils', default=True, description='Enable compilation and installation of extra utilities from the src subdirectory')
+    variant('selector', default=True, description='Grid selector definition added to config.h')
     variant('threads', default=True, description='Activate pThread support')
     variant('shared', default=True, description='Enables the build of shared libraries.')
     variant('alugrid', default=False, description='Support of dune-alugrid module')
@@ -67,8 +69,7 @@ class DuneFunctions(CMakePackage):
 
     #dependencies 
     depends_on('dune-localfunctions')
-    depends_on('dune-grid')
-    depends_on('dune-grid+uggrid', when='+uggrid')
+    depends_on('dune-grid+uggrid')
     depends_on('dune-typetree')
     depends_on('dune-istl')
     depends_on('dune-common+python+shared')
