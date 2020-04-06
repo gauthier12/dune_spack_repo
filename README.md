@@ -16,9 +16,28 @@ Install dune modules
 ```
 spack install dune-python
 ```
-## Use
+## Use a module
 To use dune-python, load the module
 ```
 source $SPACK_ROOT/share/spack/setup-env.sh
 spack load dune-python
 ```
+
+## Build a new module
+### Initialize developement environment 
+```
+source $SPACK_ROOT/share/spack/setup-env.sh
+spack install --only=dependencies dune-newmodule
+spack build-env dune-newmodule $SHELL
+```
+### Initialize dune project
+```
+duneproject
+```
+Answer the questions about the new modules, enter the project folder and compile with standard cmake
+```
+mkdir build
+cd build 
+cmake ..
+cmake --build .
+``
