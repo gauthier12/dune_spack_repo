@@ -12,27 +12,32 @@ cd $HOME
 git clone https://github.com/gauthier12/dune_spack_repo.git
 spack repo add dune_spack_repo
 ```
-Install dune modules
+Install dune with desired modules
 ```
-spack install dune-python
+spack install dune+desired+modules+.....
 ```
-## Use a module
-To use dune-python, load the module
+by example
+```
+spack install dune+uggrid+grid+functions
+```
+modules dependencies wil be automatically downloaded and added
+
+## Use 
+To use dune, load the module
 ```
 source $SPACK_ROOT/share/spack/setup-env.sh
-spack load dune-python
+spack load dune
 ```
+if python module was installed, python binding are avalaible after loading the module
 
 ## Build a new module
-### Initialize developement environment 
+### Load the dune module
 ```
 source $SPACK_ROOT/share/spack/setup-env.sh
-spack install --only=dependencies dune-newmodule
-spack build-env dune-newmodule $SHELL
+spack load dune
 ```
 ### Initialize dune project
 ```
-export DUNE_CONTROL_PATH=$SPACK_ROOT/opt/spack/linux-archrolling-sandybridge/gcc-9.2.0/
 duneproject
 ```
 Answer the questions about the new modules, enter the project folder and compile with standard cmake
