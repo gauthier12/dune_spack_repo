@@ -25,7 +25,7 @@ modules dependencies wil be automatically downloaded and added
 ## Use 
 To use dune, load the module
 ```
-source $SPACK_ROOT/share/spack/setup-env.sh
+source /PATH/TO/SPACK/share/spack/setup-env.sh
 spack load dune
 ```
 if python module was installed, python binding are avalaible after loading the module
@@ -33,7 +33,7 @@ if python module was installed, python binding are avalaible after loading the m
 ## Build a new module
 ### Load the dune module
 ```
-source $SPACK_ROOT/share/spack/setup-env.sh
+source /PATH/TO/SPACK/share/spack/setup-env.sh
 spack load dune
 ```
 ### Initialize dune project
