@@ -32,6 +32,7 @@ spack build-env dune-newmodule $SHELL
 ```
 ### Initialize dune project
 ```
+export DUNE_CONTROL_PATH=$SPACK_ROOT/opt/spack/linux-archrolling-sandybridge/gcc-9.2.0/
 duneproject
 ```
 Answer the questions about the new modules, enter the project folder and compile with standard cmake

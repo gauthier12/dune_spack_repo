@@ -59,7 +59,6 @@ class DuneFunctions(CMakePackage):
     variant('selector', default=True, description='Grid selector definition added to config.h')
     variant('oldcategory', default=True, description='Enable/Disable the backwards compatibility of the category enum/method in dune-istl solvers, preconditioner, etc.')
     variant('extrautils', default=True, description='Enable compilation and installation of extra utilities from the src subdirectory')
-    variant('selector', default=True, description='Grid selector definition added to config.h')
     variant('threads', default=True, description='Activate pThread support')
     variant('shared', default=True, description='Enables the build of shared libraries.')
     variant('alugrid', default=False, description='Support of dune-alugrid module')
