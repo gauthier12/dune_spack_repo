@@ -28,7 +28,7 @@ To use dune, load the module
 source /PATH/TO/SPACK/share/spack/setup-env.sh
 spack load dune
 ```
-if python module was installed, python binding are avalaible after loading the module
+if python module was installed, python bindings are avalaible after loading the module
 
 ## Build a new module
 ### Load the dune module
